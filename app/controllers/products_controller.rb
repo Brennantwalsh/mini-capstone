@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
-  def single
+  def show
     @product = Product.find(1)
   end
 end
