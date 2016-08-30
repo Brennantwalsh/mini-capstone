@@ -9,5 +9,6 @@
   name = Faker::Commerce.product_name
   price = Faker::Commerce.price
   image = Faker::Placeholdit.image
-  Product.create(name: name, price: price, image: image)
+  description = Faker::Hipster.paragraph
+  Product.create(name: name, price: price, image: image, description: description)
 end
