@@ -8,5 +8,6 @@
 20.times do
   name = Faker::Commerce.product_name
   price = Faker::Commerce.price
-  Product.create(name: name, price: price)
+  image = Faker::Placeholdit.image
+  Product.create(name: name, price: price, image: image)
 end
