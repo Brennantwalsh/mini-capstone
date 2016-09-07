@@ -11,7 +11,8 @@ class ProductsController < ApplicationController
                               price: params[:price],
                               image: params[:image],
                               description: params[:description])
-    render 'show.html.erb'
+    flash[:success] = "It's Alive!"
+    redirect_to '/products/#{@product.id}'
   end
 
   def show
@@ -28,6 +29,14 @@ class ProductsController < ApplicationController
                     price: params[:price],
                     image: params[:image],
                     description: params[:description])
-    render 'show.html.erb'
+    flash[:success] = "It is updated!"
+    redirect_to '/products/#{@product.id}'
+  end
+
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    flash[:warning] = "IT is DEAD!"
+    redirect_to '/products'
   end
 end

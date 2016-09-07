@@ -2,3 +2,9 @@
 <h2>$<%= @product.price %></h2>
 <img src = <%=@product.image %>>
 <h2><%= @product.description %></h2>
+
+<%= link_to 'Home', '/products' %>
+<br>
+<%= link_to 'Edit', "/products/#{@product.id}/edit" %>
+<br>
+<%= link_to 'Delete', "/products/#{@product.id}", method: :delete %>
