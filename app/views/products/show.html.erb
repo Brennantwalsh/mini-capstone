@@ -4,7 +4,7 @@
 <% else %>
   <h3>For Sale!</h3>
 <% end %>
-<h2><%= number_to_currency(@product.price) %></h2>
+<h2 class = <%= "discount-price" if @product.discounted? %>><%= number_to_currency(@product.price) %></h2>
 <h3><%= number_to_currency(@product.tax) %> tax</h3>
 <h3><%= number_to_currency(@product.total) %> total</h3>
 <img src = <%=@product.image %>>
