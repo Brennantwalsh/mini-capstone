@@ -1,5 +1,12 @@
 <h2><%= @product.name %></h2>
-<h2>$<%= @product.price %></h2>
+<% if @product.discounted? %>
+  <h3>Discount Item!</h3>
+<% else %>
+  <h3>For Sale!</h3>
+<% end %>
+<h2><%= number_to_currency(@product.price) %></h2>
+<h3><%= number_to_currency(@product.tax) %> tax</h3>
+<h3><%= number_to_currency(@product.total) %> total</h3>
 <img src = <%=@product.image %>>
 <h2><%= @product.description %></h2>
 
