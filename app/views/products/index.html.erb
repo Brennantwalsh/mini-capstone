@@ -5,6 +5,11 @@
     <div class="well thumbnail index-list">
     <h2><%= link_to product.name, "/products/#{product.id}"%> </h2>
     <h2>$<%= product.price %></h2>
+    <% if product.in_stock? %>
+    <h2>In stock</h2>
+    <% else %>
+    <h2>Out of Stock</h2>
+    <% end %>
     <a href="/products/<%= product.id %>">
       <img src = <%=product.image %> alt = <%= product.name %>>
     </a>

@@ -10,7 +10,8 @@ class ProductsController < ApplicationController
     @product = Product.create(name: params[:name],
                               price: params[:price],
                               image: params[:image],
-                              description: params[:description])
+                              description: params[:description],
+                              in_stock: params[:in_stock])
     flash[:success] = "It's Alive!"
     redirect_to '/products/#{@product.id}'
   end
@@ -28,7 +29,8 @@ class ProductsController < ApplicationController
     @product.update(name: params[:name],
                     price: params[:price],
                     image: params[:image],
-                    description: params[:description])
+                    description: params[:description],
+                    in_stock: params[:in_stock])
     flash[:success] = "It is updated!"
     redirect_to '/products/#{@product.id}'
   end
