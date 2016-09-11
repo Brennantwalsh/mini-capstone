@@ -4,7 +4,7 @@
   <div class="col-md-4">
     <div class="well thumbnail index-list">
     <h2><%= link_to product.name, "/products/#{product.id}"%> </h2>
-    <h2>$<%= product.price %></h2>
+    <h2><%= number_to_currency(product.price) %></h2>
     <% if product.in_stock? %>
     <h2>In stock</h2>
     <% else %>
