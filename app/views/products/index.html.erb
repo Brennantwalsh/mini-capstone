@@ -10,9 +10,8 @@
     <% else %>
     <h2>Out of Stock</h2>
     <% end %>
-    <% image = Image.find_by(product_id: product.id) %>
     <a href="/products/<%= product.id%>">
-        <img src = <%= image.url %> alt = <%= product.name %>>
+        <img src = <%= product.images.first.url %> alt = <%= product.name %>>
     </a>
     <h2><%= product.description %></h2>
     </div>

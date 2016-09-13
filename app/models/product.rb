@@ -13,4 +13,8 @@ class Product < ApplicationRecord
   def total
     tax + price.to_f
   end
+
+  def top_image
+    product.images.first.url
+  end
 end
