@@ -11,7 +11,7 @@
     <h2>Out of Stock</h2>
     <% end %>
     <a href="/products/<%= product.id%>">
-        <img src = <%= product.images.first.url %> alt = <%= product.name %>>
+        <img src = <%= product.top_image %> alt = <%= product.name %>>
     </a>
     <h2><%= product.description %></h2>
     </div>

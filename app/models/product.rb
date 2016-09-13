@@ -15,6 +15,6 @@ class Product < ApplicationRecord
   end
 
   def top_image
-    product.images.first.url
+    images.first.url
   end
 end
