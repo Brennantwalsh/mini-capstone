@@ -25,4 +25,7 @@ Rails.application.routes.draw do
   get '/images/:id/edit' => 'images#edit'
   patch '/images/:id' => 'images#update'
   delete '/images/:id' => 'images#destroy'
+
+  get 'signup' => 'users#new'
+  post '/users' => 'users#create'
 end
