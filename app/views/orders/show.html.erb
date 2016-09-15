@@ -1,0 +1,9 @@
+<h2>Order Confirmation</h2>
+
+<h2><%= @product.name %></h2>
+
+<h2>Quantity: <%= @order.quantity %></h2>
+<h2>subtotal: <%= number_to_currency(@order.subtotal) %></h2>
+<h2>tax: <%= number_to_currency(@order.tax) %></h2>
+<h2>total: <%= number_to_currency(@order.total) %></h2>
+<h2>User: <%= current_user.name %></h2>
