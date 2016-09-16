@@ -1,9 +1,14 @@
-<h2>Order Confirmation</h2>
+<h1><%= current_user.name.titleize %> Order Confirmation</h1>
 
 <h2><%= @product.name %></h2>
+<img src="<%= @product.top_image %>" alt="<%= @product.name %>">
 
+<h2>Order Id: <%= @order.id_present_to_customer %></h2>
 <h2>Quantity: <%= @order.quantity %></h2>
+<br>
 <h2>subtotal: <%= number_to_currency(@order.subtotal) %></h2>
 <h2>tax: <%= number_to_currency(@order.tax) %></h2>
 <h2>total: <%= number_to_currency(@order.total) %></h2>
 <h2>User: <%= current_user.name %></h2>
+<h2>Email: <%= current_user.email %></h2>
+<h2>Order Time: <%= @order.pretty_created_at %></h2>
