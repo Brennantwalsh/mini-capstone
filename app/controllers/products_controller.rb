@@ -5,6 +5,11 @@ class ProductsController < ApplicationController
     sort_order = params[:sort_order]
     discount_level = params[:discount]
     search_term = params[:search_term]
+    category = params[:category]
+
+    if category
+      @products = Category.find_by(name: category).products
+    end
 
     
     if search_term
@@ -40,6 +45,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @categories = @product.categories
     @supplier = @product.supplier.name
   end
 
