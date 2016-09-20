@@ -15,8 +15,13 @@ class OrdersController < ApplicationController
                           tax: tax,
                           total: total)
 
+    carted_products.each do |carted_product|
+      carted_product.update(status: "purchased",
+                            order_id: @order.id)
+    end
     flash[:success] = "All your dreams are about to come true."
-    redirect_to "/orders/#{@order.id}"
+    
+      redirect_to "/orders/#{@order.id}"
   end
 
   def show
