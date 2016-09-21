@@ -26,7 +26,10 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/products/new">New Product <span class="sr-only">(current)</span></a></li>
+        <% if current_user && current_user.admin %>
+          <li class="active"><a href="/products/new">New Product <span class="sr-only">(current)</span></a></li>
+        <% end %>
+
         <% if current_user %>
           <li><%= link_to 'Log Out', '/logout', method: :delete %></li>
         <% else %>  
@@ -64,7 +67,8 @@
               <li><a href="/products?category=<%= category.name %>"><%= category.name.titleize %></a></li>
             <% end %>
             <li role="separator" class="divider"></li>
-            <li><a href="/carted_products">Shopping Cart</a></li>
+            <li>
+            <%= link_to "<span class ='glyphicon glyphicon-shopping-cart'></span> Shopping Cart(#{@cart_count})".html_safe, "/carted_products"%></li>
             <li><a href="#">Another action</a></li>
             <li><a href="#">Something else here</a></li>
             <li><a href="#">Separated link</a></li>

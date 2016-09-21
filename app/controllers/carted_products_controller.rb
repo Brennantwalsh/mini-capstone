@@ -1,7 +1,11 @@
 class CartedProductsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
-    @carted_products = CartedProduct.where("user_id = ? AND status = ?", current_user.id, "carted")
-    if @carted_products == []
+    if current_user && current_user.currently_carted.any?
+      @carted_products = current_user.currently_carted
+    else
+      flash[:warning] = "Please add items to cart."
       redirect_to "/"
     end
   end
@@ -19,6 +23,7 @@ class CartedProductsController < ApplicationController
   def destroy
     @carted_product = CartedProduct.find(params[:id])
     @carted_product.update(status: "removed")
+    flash[:success] = "Product Removed From Cart"
     redirect_to "/carted_products"
   end
 end

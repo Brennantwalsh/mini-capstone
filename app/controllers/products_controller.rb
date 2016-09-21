@@ -1,12 +1,15 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_admin!, except: [:index, :show]
+
   def index
-    @products = Product.all
+    @products = Product.all.includes(:images)
     sort_attribute = params[:sort]
     sort_order = params[:sort_order]
     discount_level = params[:discount]
     search_term = params[:search_term]
     category = params[:category]
 
+   
     if category
       @products = Category.find_by(name: category).products
     end

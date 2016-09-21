@@ -1,14 +1,8 @@
 <h2>Items in your cart:</h2>
 <% @carted_products.each do |carted_product| %>
-  <h2><%= carted_product.product.name %></h2>
-  <h2><%= carted_product.quantity %></h2>
+  <h2><%= carted_product.product.name %> -qty: <%= carted_product.quantity %> - <%= link_to 'remove from cart', "/carted_products/#{carted_product.id}", method: :delete %></h2>
   <h2><%= number_to_currency(carted_product.product.price * carted_product.quantity) %></h2>
-  <%= form_tag "/carted_products/#{carted_product.id}", method: :delete do %>
-    <%= submit_tag "Remove from Cart" %>
-  <% end %>
   <br>
 <% end %>
 
-<%= form_tag '/orders', method: :post do %>
-  <%= submit_tag "Buy Now"  %>
-<% end %>
+<%= link_to 'Buy Now!', '/orders', method: :post, class: 'btn btn-danger' %>
