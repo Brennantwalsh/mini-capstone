@@ -20,7 +20,7 @@
 <ul><h2>Categories:</h2>
 
 <% @categories.each do |category|%>
-  <li><a href= "/products?category=<%= category.name %>"><%= category.name %></li>
+  <li><a href= "/products?category=<%= category.name %>"><%= category.name %></a></li>
 <% end %>
 </ul>
 
@@ -29,6 +29,7 @@
   <br>
   <%= link_to 'Delete', "/products/#{@product.id}", method: :delete %>  
 <% end %>
+
 <p>Supplier: <%= @supplier %></p>
 
 
