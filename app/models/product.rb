@@ -4,7 +4,7 @@ class Product < ApplicationRecord
   validates :price, presence: true
   validates :price, numericality: true
   validates :description, presence: true
-  validates :description, length: { in: 100..300}
+  validates :description, length: { in: 0..300}
 
   belongs_to :supplier
   has_many :images
@@ -27,6 +27,8 @@ class Product < ApplicationRecord
   end
 
   def top_image
-    images.first.url
+    if images.first
+      images.first.url
+    end
   end
 end
