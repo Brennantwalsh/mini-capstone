@@ -1,7 +1,7 @@
 User.create!([
   {name: "joe", email: "joe@ymail.com", password: "password", password_confirmation: "password", admin: false},
   {name: "benny", email: "benny@gmail.com", password: "password", password_confirmation: "password", admin: false},
-  {name: "joe", email: "joe@gmail.com", password: "password", password_confirmation: "password", admin: false},
+  {name: "joey", email: "joe@gmail.com", password: "password", password_confirmation: "password", admin: false},
   {name: "admin", email: "admin@gmail.com", password: "password", password_confirmation: "password", admin: false},
   {name: "Brennan", email: "brennan@gmail.com", password: "password", password_confirmation: "password", admin: true}
 ])
