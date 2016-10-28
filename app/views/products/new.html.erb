@@ -1,13 +1,18 @@
+<% @product.errors.full_messages.each do |error| %>
+  <h3><%= error %></h3>
+<% end %>
+
+
 <h1>Add Inventory</h1>
 
 <%= form_tag '/products', method: :post do %>
   <div class = "form-group">
     <%= label_tag :name, 'Enter name'%>
-    <%= text_field_tag :name%>
+    <%= text_field_tag :name, @product.name%>
   </div>
   <div class = "form-group">
     <%= label_tag :price, 'Enter price'%>
-    <%= text_field_tag :price%>
+    <%= text_field_tag :price, @product.price %>
   </div>
   <div class = "form-group">
     <%= label_tag :image, 'Image'%>
@@ -19,7 +24,7 @@
   </div>
   <div class = "form-group">
     <%= label_tag :description, 'Enter description'%>
-    <%= text_field_tag :description%>
+    <%= text_field_tag :description, @product.description %>
   </div>
   <div class = "form-group">
     <%= label_tag :in_stock, 'In Stock?'%>
