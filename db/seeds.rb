@@ -1,3 +1,8 @@
+Supplier.create!([
+  {name: "Nintendo", email: "Nintendoyo@dude.com", phone: "867-530-9101"},
+  {name: "Atari", email: "Atariisgod@yahoo.com", phone: "867-530-9101"},
+  {name: "Sega", email: "Genesisbro@games.com", phone: "432-543-9873"}
+])
 Product.create!([
   {name: "Heavy Duty Granite Watch", description: "Neutra before they sold out seitan distillery. Tacos post-ironic deep v mumblecore mixtape art party swag normcore. Lomo whatever migas.", price: "79.0", in_stock: true, supplier_id: 1},
   {name: "Intelligent Concrete Gloves", description: "Raw denim cornhole heirloom scenester paleo carry. Marfa chartreuse heirloom loko. Chambray letterpress austin cliche kickstarter beard distillery.", price: "2.0", in_stock: true, supplier_id: 3},
@@ -39,11 +44,6 @@ Product.create!([
   {name: "Johannesburg", description: "blah blha", price: "16.0", in_stock: nil, supplier_id: 2},
   {name: "Ergonomic Aluminum Car", description: "Venmo cardigan craft beer cleanse. Helvetica roof lo-fi marfa. Blog bespoke kickstarter mlkshk pop-up kombucha poutine chartreuse.", price: "79.0", in_stock: true, supplier_id: 1},
   {name: "Kengo", description: "one of the greatest ps2 game", price: "5.0", in_stock: nil, supplier_id: 3}
-])
-Supplier.create!([
-  {name: "Nintendo", email: "Nintendoyo@dude.com", phone: "867-530-9101"},
-  {name: "Atari", email: "Atariisgod@yahoo.com", phone: "867-530-9101"},
-  {name: "Sega", email: "Genesisbro@games.com", phone: "432-543-9873"}
 ])
 Image.create!([
   {url: "https://placehold.it/300x300.png", product_id: 1},
